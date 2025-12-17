@@ -1,8 +1,21 @@
-#Exercise 2 shopping cart program
+#Variables = A container for a value(string, integer, float, boolean)
+#strings
+first_name = "suraj"
+food="Apple"
+email="someone@gmail.com"
 
-item = input("Enter name of your item: ")
-price = float(input("Enter the price: "))
-quantity = int(input("How many you would like: "))
-total = price * quantity
-print(f"Your Total Bill: ${total}")
-print("Thanks for shopping!\nHave a nic day!")
+#integer
+age =33
+quantity = 3
+num_of_quantity=23
+
+#float
+price = 10.44
+gpa = 234.234
+distance = 234.2
+
+#Boolean
+is_student = True
+For_sale = False
+Is_online = True
+
