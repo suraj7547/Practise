@@ -1,0 +1,38 @@
+#include <stdio.h>
+void merge(int arr[],int low,int mid,int high){
+    int i=low;
+    int j=mid+1;
+    int k=0;
+    int temp[100];
+    while(i<=mid && j<=high){
+        if(arr[i]<arr[j]){
+            temp[k++]=arr[i++];
+        }else {
+            temp[k++]=arr[j++];
+        }
+    }
+    while(i<=mid){
+        temp[k++]=arr[i++];
+    }
+    while(j<=high){
+        temp[k++]=arr[j++];
+    }
+    for(int i=low,k=0;i<=high;i++,k++){
+        arr[i]=temp[k];
+    }
+}
+void mergesort(int arr[],int low,int high){
+    if(low<high){
+        int mid=(low+high)/2;
+        mergesort(arr,low,mid);
+        mergesort(arr,mid+1,high);
+        merge(arr,low,mid,high);
+    }
+}
+int main(){
+    int arr[]={7,8,9,5,4,6};
+    int n=6;
+    mergesort(arr,0,n-1);
+    for(int i=0;i<n;i++)printf("%d ",arr[i]);
+    return 0;
+}
