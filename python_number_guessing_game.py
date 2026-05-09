@@ -5,10 +5,10 @@ high=100
 number=random.randint(low,high)
 guesses=0
 while True:
-    guess=input("Enter your guess: ")
+    guess=input("Guess the number: ")
     guesses+=1
     if guess.isalpha()==True:
-        print("invalid")
+        print("Error: Invalid Number!")
     elif guess.isdigit()==True:
         guess=int(guess)
         if guess>number:
