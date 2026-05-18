@@ -15,5 +15,5 @@ avg_marks=[sum(student["marks"])/3 for student in students]
 pass_students=[student["name"] for student in students if sum(student["marks"])/3 >=50]
 topper_list=[sum(student["marks"])/3 for student in students]
 topper_list=sorted(topper_list)
-print(topper_list[-1])
+print(topper_list[-1::])
 

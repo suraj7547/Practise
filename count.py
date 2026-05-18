@@ -4,4 +4,5 @@ grade = ['c','d','a','a','b','b','a']
 
 a = grade.count('a')
 
-print(a)
+# print(a)
+
