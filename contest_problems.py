@@ -63,3 +63,27 @@ for _ in range(t):
     else:
         print(min_swaps)
 
+#forth question - magic mirror
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    
+    # The sum of the first and last element should match all other pairs
+    target_sum = a[0] + a[-1]
+    is_possible = True
+    
+    # Check pairs from the outside in
+    for i in range(n // 2):
+        if a[i] + a[n - 1 - i] != target_sum:
+            is_possible = False
+            break
+            
+    if is_possible:
+        print("Yes")
+    else:
+        print("No")
+
+#fifth question - planting roses
