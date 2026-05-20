@@ -32,4 +32,34 @@ for _ in range(t):
         print("Yes")
     else:
         print("No")
+
+#third question - beginnings and endings
+
+t = int(input())
+
+for _ in range(t):
+    n = int(input())
+    a = list(map(int, input().split()))
+    
+    first_occ = {}
+    last_occ = {}
+    
+    for i in range(n):
+        val = a[i]
+        if val not in first_occ:
+            first_occ[val] = i
+        last_occ[val] = i
         
+    min_swaps = float('inf')
+    
+    for val in first_occ:
+        if first_occ[val] != last_occ[val]:
+            swaps = first_occ[val] + (n - 1 - last_occ[val])
+            if swaps < min_swaps:
+                min_swaps = swaps
+                
+    if min_swaps == float('inf'):
+        print("-1")
+    else:
+        print(min_swaps)
+
