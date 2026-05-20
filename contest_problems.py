@@ -88,3 +88,61 @@ for _ in range(t):
 
 #fifth question - planting roses
 
+import sys
+
+def solve():
+    input_data = sys.stdin.read().split()
+    if not input_data:
+        return
+    
+    T = int(input_data[0])
+    idx = 1
+    out = []
+    
+    for _ in range(T):
+        N = int(input_data[idx])
+        M = int(input_data[idx+1])
+        K = int(input_data[idx+2])
+        idx += 3
+        
+        count_K = 0
+        R = []
+        
+        for _ in range(N):
+            a = int(input_data[idx])
+            idx += 1
+            count_K += a // K
+            rem = a % K
+            if rem > 0:
+                R.append(rem)
+                
+        budget = M + 1
+        roses = 0
+        
+        take_K = min(count_K, budget // (K + 1))
+        budget -= take_K * (K + 1)
+        roses += take_K * K
+        
+        if take_K < count_K:
+            roses += max(0, budget - 1)
+            out.append(str(roses))
+            continue
+            
+        R.sort(reverse=True)
+        
+        for r in R:
+            if budget >= r + 1:
+                budget -= r + 1
+                roses += r
+            else:
+                roses += max(0, budget - 1)
+                budget = 0
+                break
+                
+        out.append(str(roses))
+        
+    print('\n'.join(out))
+
+solve()
+
+#sixth question - Gravity Golf
