@@ -1,18 +1,10 @@
-
-
 public class print{
     public static void main(String[] args){
-        String name="Bro Code";
-        int gta=6;
-        double pi=3.14159;
-        char gender='M';
-        boolean isAdmin=true;
-
+        String name = "suraj kumar";
+        String branch = "cse-4";
+        int age=19;
         System.out.println(name);
-        System.out.println(gta);
-        System.out.println(pi);
-        System.out.println(gender);
-        System.out.println(isAdmin);
-    
+        System.out.println(branch);
+        System.out.println(age);
     }
 }
